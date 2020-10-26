@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+	triggers {
+	 //Query repository on weekdays every four hour
+	 pollSCM('0 */4 * * 1-5')
+	 }
+	 
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+				junit '**/target/*.html'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+				sh 'git clone '
+				sh 'ansible-playbook webserver.yaml -i host'
+				
+            }
+        }
+    }
+}
