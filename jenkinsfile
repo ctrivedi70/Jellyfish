@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-				sh 'git clone '
+				sh 'git clone https://github.com/ctrivedi70/Jellyfish'
 				sh 'ansible-playbook webserver.yaml -i host'
 				
             }
