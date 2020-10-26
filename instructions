@@ -1,15 +1,20 @@
 #------------------------------------------------------------------------------
 Step 1  First we will create a cluster of web server with ALB and ASG to server http content via terraform
         created 3 set of file, on which main.tf has the the required code and variable.tf has variable which will be used in main.tf and output.tf will be used for the ALB domain name
-        run terraform command in any of the aws EC2
-        1a) terraform init
-		1b) terraform plan
-		1c) terraform apply
+        Terraform will create the required number of resources and we need to save the IP of EC2 instance manually in hosts file for further use in ansible
+        run terraform command in any of the aws EC2.
+		  1a) terraform init
+		  1b) terraform plan
+		  1c) terraform apply
 		
 step 2 Created jenkins declarative pipeline to test and deploy and change in the index.html file
+       so any change in the index.html file will invoke declarative pipeline to test and deploy the code in aws server using ansible playbook
 
 step 3 created ansible playbook to deploy the newly changed code in the already running ec2 instance
        Name of file- webserver.yaml and hosts
+	   
+
+		
 	   
 
 		
